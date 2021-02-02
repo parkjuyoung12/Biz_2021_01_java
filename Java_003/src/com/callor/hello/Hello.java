@@ -19,6 +19,7 @@ public class Hello {
 	System.out.println("30 x 40 = " + (30 * 40));
 	System.out.println("40 - 30 = " + (40 - 30));
 	System.out.println("40 / 20 = " + (40 / 20));
+	System.out.println("40 % 20 = " + (40 % 20));
 	System.out.println("\n여러분 반갑습니다");
 
 	int a=30;
