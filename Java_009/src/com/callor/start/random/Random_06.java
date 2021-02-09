@@ -1,4 +1,4 @@
-package com.callor.start.jdk;
+package com.callor.start.random;
 
 import java.util.Random;
 
@@ -20,9 +20,9 @@ public class Random_06 {
 		int intEnd = 107;
 		int count = 0;
 		for (count = 0; count < intEnd; count++) {
-			
+
 			int num = rnd.nextInt(100) + 1;
-			if(num > 50) {
+			if (num > 50) {
 				break;
 			}
 
