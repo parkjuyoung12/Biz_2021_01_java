@@ -19,7 +19,7 @@ public class App_11 {
 			}
 			
 			if(num < 2 || num > 9) {
-				System.out.println("어허 그겍 아니야!!");
+				System.out.println("어허 그게 아니야!!");
 				System.out.println("2 ~ 9 까지만 구구단 출력 할 수 있어");
 				System.out.println("다시 입력해");
 			} else {
