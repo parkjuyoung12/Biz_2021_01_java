@@ -16,31 +16,75 @@ import com.callor.applications.service.PrimeServiceV22;
  */
 public class HomeWork_01 {
 	public static void main(String[] args) {
-		Random rnd = new Random();
-		int rndSum = 0; // 랜덤 소수의 합
-		int num = 0;
-		for (int index = 0; index < 100; index++) {
-
-			num = rnd.nextInt(100) + 2; // 2이상의 임의의 정수 100개
-			System.out.println(num);
-		} // for end
-
+		/*
+		 * java에서는 변수, 객체를 선언할 때
+		 * 사용하기 직전에 선언 및 초기화를 하면 된다.
+		 * 통상적으로 코딩을 할 때 
+		 * 변수, 객체 등의 선언
+		 * 가급적 코드의 시작부분(클래스 선언 명령문 아래, method 선언문 아래)
+		 * 선언하는게 좋다,
+		 */
 		PrimeServiceV22 psV2 = new PrimeServiceV22();
-
-		int result = psV2.prime(num); // PrimeServiceV2에 있는 prime(num) method를 불러와 result에 할당
-		if (result == 0) { // result (num 값을 나눴을때 나머지가 0인가?)
+		Random rnd = new Random();
+		
+		int intPrimeSum = 0;
+		int intPrimeCount = 0;
+		
+		// int[] rndNums = new int[100]
+		int rndNums[] = new int[100];
+		
+		// 생성된 rndNums 배열에 임의 정수 100개를
+		// 저장해 두었다.
+		// 이처럼 배열을 만들어두면
+		// 이후의 코드에서 한번 생성된 임의 정수 100개를
+		// 자유롭게 활용 할 수 있다.
+		for(int i = 0; i < 100; i++) {
+			rndNums[i] = rnd.nextInt(100000)+2;
+		}
+		
+		// rndNums 배열에 담겨있는 정수들을
+		// PsV2.prime() method에게 보내서 
+		// 소수인가를 검사하자
+		
+		// 다음처럼 prime() method에 배열을 통째로 전달하여
+		// 코드를 수행 할 수 없는 이유
+		// psV2.prime(rndNums);
+		// psV2.prime() method는 매개변수가 (int num) 로
+		//  선언되어 있다.
+		// 즉, 이 method는 전달받을 수 있는 값이 정수 1개이다.
+		// 그런데 배열(100 개의 정수) 를 한꺼번에 전달하려고
+		// 시도하기 때문에 안된다.
+		// 그렇다면 psV2.prime() method를 사용하기 위해서는
+		// rndNums의 요소들을 한개씩 전달 해야 한다.
+		// 결론은 for() 반복문을 사용해야 한다.
+		
+		for(int i =0; i < rndNums.length; i++) {
 			
-		} // if end
-		else {
-
-		} // else end
-
-		for (int index = 0; index < 100; index++) { // 소수인 수들의 합계 구하는 반복문
-
-			rndSum += result; // 소수인 수들의 합
-
-		} // for end
-		System.out.println("================================");
-		System.out.println("소수인 수들의 합 : " + rndSum);
+			int num = rndNums[i];
+			
+			int result = psV2.prime(num);
+			if(result > 0) {
+				System.out.print(num + ", ");
+			}
+		}
+		
+		for(int i= 0; i< rndNums.length; i++) {
+			int num = rndNums[i];
+			int result = psV2.prime(num);
+			if(result > 0) {
+				intPrimeSum += num;
+			}
+		}
+		
+		for(int i= 0; i< rndNums.length; i++) {
+			int num = rndNums[i];
+			int result = psV2.prime(num);
+			if(result > 0) {
+				intPrimeCount += num;
+			}
+		}
+		
+		System.out.println("합계 : " + intPrimeSum);
+		System.out.println("개수 : " + intPrimeCount);
 	}// main end
 } // class end
