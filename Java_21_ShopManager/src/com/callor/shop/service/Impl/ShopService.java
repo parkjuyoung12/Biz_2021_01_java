@@ -1,10 +1,11 @@
-package com.callor.shop.service;
+package com.callor.shop.service.Impl;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 import com.callor.shop.model.ServiceVO;
+import com.callor.shop.service.MenuService;
 
 public class ShopService implements MenuService {
 	
