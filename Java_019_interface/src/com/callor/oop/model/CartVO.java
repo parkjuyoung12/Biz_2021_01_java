@@ -9,13 +9,15 @@ package com.callor.oop.model;
 public class CartVO {
 	private String userName;
 	private String productName;
-	private String standart;
+	private String standard;
 	private String inputDate;
 	private String inputTime;
 	
 	private int qty;
 	private int price;
 	private int total;
+	
+	
 	public String getUserName() {
 		return userName;
 	}
@@ -29,10 +31,10 @@ public class CartVO {
 		this.productName = productName;
 	}
 	public String getStandart() {
-		return standart;
+		return standard;
 	}
-	public void setStandart(String standart) {
-		this.standart = standart;
+	public void setStandart(String standard) {
+		this.standard = standard;
 	}
 	public String getInputDate() {
 		return inputDate;
@@ -66,7 +68,7 @@ public class CartVO {
 	}
 	@Override
 	public String toString() {
-		return "CartVO [userName=" + userName + ", productName=" + productName + ", standart=" + standart
+		return "CartVO [userName=" + userName + ", productName=" + productName + ", standard=" + standard
 				+ ", inputDate=" + inputDate + ", inputTime=" + inputTime + ", qty=" + qty + ", price=" + price
 				+ ", total=" + total + "]";
 	}
