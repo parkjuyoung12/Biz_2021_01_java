@@ -1,6 +1,6 @@
 package com.callor.shop.model;
 
-public class ServiceVO {
+public class CartVO {
 	private String userName;
 	private String productName;
 	private String date;

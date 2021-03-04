@@ -1,15 +1,15 @@
 package com.callor.shop;
 
+import com.callor.shop.service.CartService;
 import com.callor.shop.service.MenuService;
-import com.callor.shop.service.MenuServiceV1;
-import com.callor.shop.service.Impl.ShopService;
-import com.callor.shop.service.Impl.ShopServiceV1;
+import com.callor.shop.service.Impl.CartServiceImplV1;
+import com.callor.shop.service.Impl.MenuServiceImplV1;
 
-public class ShopManager {
+public class CartEx_01 {
 	public static void main(String[] args) {
 		
-	MenuService sSerivce = new ShopService(); // 구매자
-	MenuServiceV1 sV1 = new ShopServiceV1(); // 카트메뉴
+	CartService sSerivce = new CartServiceImplV1(); // 구매자
+	MenuService sV1 = new MenuServiceImplV1(); // 카트메뉴
 
 	while(true) {
 		Integer menu = sV1.selectMenu();
