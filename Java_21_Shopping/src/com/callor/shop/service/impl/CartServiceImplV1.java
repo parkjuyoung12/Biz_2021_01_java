@@ -22,19 +22,18 @@ public class CartServiceImplV1 implements CartService{
 	 * private으로 선언된 변수(객체)는 서로 공유가 되지 않는다.
 	 * 상속받은 클래스의 method에서 변수(객체)를 
 	 * 		공유하려면 부모 클래스에서 
-	 * 		변(객체)를 반드시 protected로 선언해 주어야 한다.
+	 * 		변수(객체)를 반드시 protected로 선언해 주어야 한다.
 	 * 또한 상속 받은 클래스에서는 해당 변수(객체)를
 	 * 		선언해서는 안된다. 
 	 *  
 	 */
 	protected List<CartVO> cartList;
 	
-	private final Scanner scan;
+	private final Scanner scan;	// final은 통상 public static final로 사용
 	
 	public CartServiceImplV1() {
 		scan = new Scanner(System.in);
 		cartList = new ArrayList<CartVO>();
-		
 	}
 	
 	@Override

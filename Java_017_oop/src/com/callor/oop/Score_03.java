@@ -18,8 +18,8 @@ public class Score_03 {
 			System.out.println("학생의이름을 입력하세요.");
 			scoreVO.strName = scan.nextLine();
 			String strName = scan.nextLine();
-		
-	
+			
+			
 			while(true) {
 				System.out.println("국어 점수를 입력하세요");
 				System.out.print(">> ");

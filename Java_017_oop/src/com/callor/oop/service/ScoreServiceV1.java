@@ -6,9 +6,9 @@ public class ScoreServiceV1 {
 	Scanner scan = new Scanner(System.in);
 	
 	public int inputScore(String subject) {
-
+		
 		while(true) {
-			System.out.println(subject + "점수를 입력 하세요");
+			System.out.println(subject + " 점수를 입력 하세요");
 			System.out.print(">> ");
 			String strScore = scan.nextLine();
 			
@@ -28,4 +28,6 @@ public class ScoreServiceV1 {
 		
 	}
 
+	
+	
 }

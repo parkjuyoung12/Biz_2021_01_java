@@ -11,7 +11,8 @@ import com.callor.shop.values.Values;
  */
 public class MenuServiceImplV1 implements MenuService {
 	/*
-	 * final 키워드는 변수, 객체를 혹시 모를 어디선가 변경하는 행위를 못하도록 방지하는 조치 상수선언 이라고 한다. final로 선언된
+	 * final 키워드는 변수, 객체를 혹시 모를 어디선가 변경하는 
+	 * 행위를 못하도록 방지하는 조치 상수선언 이라고 한다. final로 선언된
 	 * 변수나 객체는 읽기 전용이다.
 	 * 
 	 * 값을 저장하려고 시도하면 오류가 난다. final int num = 0; num = 0; // 오류 발생
