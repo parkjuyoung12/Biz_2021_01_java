@@ -118,10 +118,11 @@ public class ScoreVO {
 	public void setAvg(double avg) {
 		this.avg = avg;
 	}
-	public int getRank(int rank) {
+	
+	public double getRank() {
 		return rank;
 	}
-	
+
 	public void setRank(int rank) {
 		this.rank = rank;
 	}

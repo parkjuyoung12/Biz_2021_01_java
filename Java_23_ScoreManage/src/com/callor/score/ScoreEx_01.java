@@ -61,15 +61,8 @@ public class ScoreEx_01 {
 				}
 				System.out.println("=================================================");
 				
-			} else /* Test 후 삭제 */ {
-				try {
-					throw new Exception("메서드 검토: MenuServiceImplV1 클래스의 selectMenu()에서 예기치 않은 결과가 반환되었습니다.");
-				} catch (Exception e) {
-					e.printStackTrace();
-				} finally {
-					System.exit(-1);
-				}
-			}
+			} 
+			
 
 		} // while(true)
 

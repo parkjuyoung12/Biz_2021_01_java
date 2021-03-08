@@ -1,7 +1,6 @@
 package com.callor.score.service;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -83,6 +82,58 @@ public class ScoreServiceImplV1 implements ScoreService {
 
 	}// saveScoreToFile()
 
+	
+	private void rankSet() {
+		
+		//list를 내림차순 정렬
+		int nSize = scoreList.size();
+		
+		for(int i = 0; i < nSize; i++) {
+			for(int j = i+1; j < nSize; j++) {
+				if(scoreList.get(i).getSum()<
+				scoreList.get(j).getSum()) {
+					ScoreVO tVO = scoreList.get(i);
+					scoreList.set(i, scoreList.get(j));
+					scoreList.set(j, tVO);
+				}
+			}
+		}
+		for(int i = 0; i < nSize; i++) {
+			ScoreVO vo = scoreList.get(i);
+			vo.setRank(i+1);
+		}
+		// 숫자로 정렬
+		// 학번순으로 정렬
+		for(int i = 0; i < nSize; i++) {
+			for(int j = i+1; j<nSize; j++) {
+				int num1 = Integer.valueOf(scoreList.get(i).getCount());
+				int num2 = Integer.valueOf(scoreList.get(j).getCount());
+				
+				if(num1 > num2) {
+					ScoreVO temp = scoreList.get(i);
+					scoreList.set(i, scoreList.get(i));
+					scoreList.set(j,temp);
+				}
+			}
+		}
+		
+		// 문자열 비교 method를 사용하여 정렬
+		for(int i = 0; i < nSize; i++) {
+			for(int j = i +1; j < nSize; j++) {
+				ScoreVO voI = scoreList.get(i);
+				ScoreVO voJ = scoreList.get(j);
+				
+				// voI의 학번이 뒷번호인 경우
+				if(voI.getCount().compareTo(voJ.getCount()) > 0 ) {
+					ScoreVO tVO = scoreList.get(i);
+					scoreList.set(i, scoreList.get(i));
+					scoreList.set(j, tVO);
+				}
+			}
+			
+		}
+	}
+	
 	@Override
 	public void loadScoreFromFile() { // 점수 파일 불러오기
 		// 0. 리스트 초기화(중복 방지)
@@ -103,7 +154,7 @@ public class ScoreServiceImplV1 implements ScoreService {
 				}
 				
 				// (파싱) \t으로 파싱
-				String[] columns = row.split("\t");
+				String[] columns = row.split(":");
 				
 				// 파싱된 조각들을 각각의 vo.set에(멤버변수에) 담기
 				ScoreVO vo = new ScoreVO();
@@ -130,18 +181,5 @@ public class ScoreServiceImplV1 implements ScoreService {
 		}
 		
 	}// loadScoreFromFile()
-
-	// FIXME 테스트 후 지우기
-	public static void main(String[] args) {
-		ScoreServiceImplV1 testObject = new ScoreServiceImplV1();
-//		testObject.makeScore();
-//		testObject.saveScoreToFile();
-		testObject.loadScoreFromFile();
-		
-		for( ScoreVO vo : testObject.scoreList ) {
-			System.out.println(vo);
-		}
-
-	}// END::main for test
 
 }

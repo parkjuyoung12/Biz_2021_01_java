@@ -15,6 +15,9 @@ package com.callor.score.service;
  */
 public interface ScoreService {
 	
+	public void inputScore();
+	
+	
 	/** 점수 생성 */
 	public void makeScore();
 	
@@ -23,6 +26,8 @@ public interface ScoreService {
 	
 	/** 점수 파일 불러오기 */
 	public void loadScoreFromFile();
+	
+	public void printScore();
 	
 
 }

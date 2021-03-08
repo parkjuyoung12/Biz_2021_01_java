@@ -17,8 +17,8 @@ public class Product_022 {
 		ProductVO[] pVOs = new ProductVO[5];
 		for(int i = 0; i< pVOs.length; i++) {
 			pVOs[i] = new ProductVO();
-			
 		}
+		
 		System.out.println("=================================");
 		System.out.println("나라 쇼핑몰 상품관리 V1");
 		System.out.println("=================================");
